@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Cyber Security – Phishing & Scam Awareness</title>
+<title>Cyber Security – Phishing & Scan Awareness</title>
  
 <!-- Font Awesome Icons -->
 <link rel="stylesheet"
@@ -17,18 +17,18 @@
   --green: #438f52;
   --lightb: #3d9dd4;
 }
-
+ 
 /* RESET */
 * { box-sizing: border-box; }
-
+ 
 body {
   font-family: "Inter","Segoe UI",system-ui,-apple-system,Arial,sans-serif;
   margin: 0;
   background: var(--blue-light);
   color: var(--text-dark);
-  line-height: 1.5;
+  line-height: 1.6;
 }
-
+ 
 /* HERO */
 .hero {
   margin-bottom: 50px;
@@ -37,7 +37,7 @@ body {
   background: url("cybersecurityimage.jpg") center / cover no-repeat;
   background-attachment: fixed;
 }
-
+ 
 .hero::after {
   content: "";
   position: absolute;
@@ -48,7 +48,7 @@ body {
     rgba(58, 123, 213, 0.75)
   );
 }
-
+ 
 header {
   height: 100%;
   display: flex;
@@ -57,45 +57,62 @@ header {
   position: relative;
   z-index: 1;
 }
-
-/* HEADER CARD */
+ 
 .header-card {
   background: rgba(255,255,255,0.15);
   backdrop-filter: blur(12px) saturate(140%);
-  padding: 40px 30px;
+  padding: 45px 35px;
   border-radius: 20px;
   text-align: center;
   color: rgb(236, 236, 236);
   max-width: 760px;
   box-shadow: 0 20px 40px rgba(0,0,0,.25);
+  animation: fadeDown .8s ease;
+  transition: transform .3s ease, box-shadow .4s ease;
 }
-
-/* SECTION HEADERS */
+ 
+.header-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 30px 60px rgba(0,0,0,.35);
+}
+ 
+ 
 .section-header {
   text-align: center;
-  margin: 0 auto 25px;
+  margin: 0 auto 30px;
 }
-
+ 
 .section-header h2 {
   font-size: 2.2rem;
-  margin: 4px 0 10px;
+  margin: 6px 0 12px;
   color: var(--blue-dark);
 }
-
-.section-eyebrow,
-.section-eyebrowtwo,
+ 
+.section-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--orange);
+}
+ 
+.section-eyebrowtwo {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green);
+}
+ 
 .section-eyebrowthree {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.8rem;
   font-weight: 600;
+  color: var(--lightb);
 }
-
-.section-eyebrow { color: var(--orange); }
-.section-eyebrowtwo { color: var(--green); }
-.section-eyebrowthree { color: var(--lightb); }
-
-/* DIVIDERS */
+ 
+/* SECTION DIVIDERS */
 .section-divider,
 .section-dividertwo,
 .section-dividerthree {
@@ -104,83 +121,119 @@ header {
   margin: 0 auto;
   border-radius: 3px;
 }
-
+ 
+.section-compact {
+  margin-bottom: 15px;
+}
+ 
 .section-divider {
   background: linear-gradient(to right, var(--orange), var(--blue-main));
 }
+ 
 .section-dividertwo {
   background: linear-gradient(to right, var(--green), var(--blue-main));
 }
+ 
 .section-dividerthree {
   background: linear-gradient(to right, var(--lightb), var(--blue-main));
 }
-
-/* SECTION SPACING (FIXED) */
+ 
+/* SECTIONS (spacing normalized) */
 section {
-  padding: 20px 20px 0;
+  padding: 20px 20px 0;   /* keep horizontal padding, no bottom padding */
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto;        /* REMOVE vertical margin */
 }
-
-/* ✅ REMOVE EXTRA SPACE FROM NESTED SECTIONS */
-section section {
-  padding-top: 0;
-}
-
-/* CONTENT BLOCK */
-.content-block {
-  margin-bottom: 32px;
-}
-
+ 
+ 
 /* HIGHLIGHTS */
 .highlights {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
-
+ 
+.highlight-box,
+.highlight-boxtwo {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+ 
+.highlight-box:hover,
+.highlight-boxtwo:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+}
+ 
+.highlight-box i,
+.highlight-boxtwo i {
+  font-size: 2.2rem;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+ 
+.section-header + section.highlights .highlight-boxtwo i {
+  color: var(--green);
+}
+ 
+.highlight-box h3,
+.highlight-boxtwo h3 {
+  min-height: 48px;
+  margin: 6px 0;
+  line-height: 1.3;
+}
+ 
 /* BOXES */
 .box {
   background: white;
   padding: 20px;
-  margin-bottom: 20px; /* reduced */
+  margin-bottom: 30px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,.08);
+  transition: transform .3s ease;
 }
-
-/* BOX CONTENT (FIXED SPACING) */
+ 
+.box i {
+  color: var(--orange);
+}
+ 
+.box:hover { transform: translateY(-4px); }
+ 
+.box-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+ 
+/* CONTENT LAYOUT */
 .box-content {
   display: flex;
-  gap: 16px;            /* reduced from 24 */
-  align-items: flex-start;
+  gap: 24px;
+  align-items: center;
 }
-
-/* TEXT SPACING FIX */
-.text-content p {
-  margin: 10px 0;
-}
-
-.label-list {
-  padding-left: 18px;
-  margin: 8px 0;
-}
-
-.label-list li {
-  margin-bottom: 10px;
-}
-
-.label-list li p {
-  margin: 4px 0 0;
-}
-
-/* IMAGE */
+ 
+.text-content { flex: 2; }
+ 
 .image-content {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
+ 
+.image-content img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+ 
 /* BUTTONS */
 button {
   padding: 12px 18px;
@@ -189,13 +242,97 @@ button {
   background: var(--orange);
   color: white;
   cursor: pointer;
+  transition: transform .2s ease;
 }
-
+ 
+/* LEARN MORE BUTTON - LARGER */
 .learn-more-btn {
-  padding: 12px 22px;
-  font-size: 1rem;
+  padding: 14px 24px;     /* bigger click area */
+  font-size: 1rem;      /* larger text */      
 }
-
+ 
+button:hover { transform: scale(1.05); }
+ 
+.quiz button {
+  width: 100%;
+  margin: 6px 0;
+  background: var(--blue-main);
+  font-size: 1rem;
+ 
+}
+ 
+/* COLLAPSIBLE */
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .5s ease, opacity .3s ease;
+}
+ 
+.hidden.show {
+  max-height: 2000px;
+  opacity: 1;
+  margin-top: 10px;
+}
+ 
+/* PHISHING EMAIL SIMULATOR */
+.email-simulator {
+  background: #f9fbff;
+  border: 1px solid #dbe7f6;
+  border-radius: 12px;
+  padding: 20px;
+}
+ 
+.phish-flag {
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+ 
+.phish-flag:hover {
+  background-color: #fff3cd;
+}
+ 
+.phish-flag.found {
+  background-color: #ffe066;
+  border-bottom: 2px solid #d63031;
+}
+ 
+.phish-flag.link {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+ 
+.found-counter {
+  margin-top: 15px;
+  font-weight: 600;
+}
+ 
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+ 
+.modal-overlay.hidden {
+  display: none;
+}
+ 
+.modal-box {
+  background: white;
+  padding: 25px 30px;
+  border-radius: 16px;
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0,0,0,.3);
+}
+ 
 /* FOOTER */
 footer {
   text-align: center;
@@ -203,6 +340,19 @@ footer {
   padding: 18px;
   font-size: .9rem;
   color: #555;
+}
+.content-block {
+  margin-bottom: 40px;
+}
+/* ANIMATIONS */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+ 
+@keyframes modalFade {
+  from { transform: translateY(-15px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 </style>
 </head>
@@ -305,7 +455,7 @@ footer {
       <strong>Double‑Barreled Phishing</strong>
       <p>
         A combined attack using more than one method, such as an email
-        followed by a phone call or text, to increase pressure and perceived credibility. 
+        followed by a phone call or text, to increase pressure and perceived credibility.
       </p>
     </li>
  
@@ -553,3 +703,6 @@ document.querySelectorAll(".email-simulator a").forEach(link => {
  
  
 </html>
+ 
+ 
+ 
