@@ -179,12 +179,6 @@ section {
   color: var(--orange);
   margin-bottom: 12px;
 }
-
-
-section section {
-  padding-top: 0;
-}
-
  
 .section-header + section.highlights .highlight-boxtwo i {
   color: var(--green);
@@ -201,7 +195,7 @@ section section {
 .box {
   background: white;
   padding: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,.08);
   transition: transform .3s ease;
@@ -222,28 +216,23 @@ section section {
 /* CONTENT LAYOUT */
 .box-content {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   align-items: center;
 }
-
-.text-content p {
-  margin: 10px 0;
-}
-
-.label-list {
-  margin: 8px 0;
-}
-
-.label-list li {
-  margin-bottom: 10px;
-}
-
-.label-list li p {
-  margin: 4px 0 0;
-}
-
  
 .text-content { flex: 2; }
+ 
+.label-list li {
+  margin-bottom: 12px; /* controls spacing between points */
+}
+ 
+.label-list li p {
+  margin: 4px 0 0;     /* reduces space under bold title */
+}
+ 
+.label-list li strong {
+  display: block;
+}
  
 .image-content {
   flex: 1;
@@ -365,7 +354,7 @@ footer {
   color: #555;
 }
 .content-block {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 /* ANIMATIONS */
 @keyframes fadeDown {
